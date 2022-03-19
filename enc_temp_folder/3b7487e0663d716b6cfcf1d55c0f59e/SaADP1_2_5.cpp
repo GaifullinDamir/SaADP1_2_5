@@ -18,6 +18,6 @@ int main()
     addItem(circularQueue.arrayForQueue, circularQueue.numberOfItems, 6, circularQueue.last);
     addItem(circularQueue.arrayForQueue, circularQueue.numberOfItems, 7, circularQueue.last);
     addItem(circularQueue.arrayForQueue, circularQueue.numberOfItems, 8, circularQueue.last);
-    printQueue(circularQueue.arrayForQueue);
+    printQueue(circularQueue.arrayForQueue, circularQueue.first, 5);
 
 }

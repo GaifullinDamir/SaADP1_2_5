@@ -18,7 +18,7 @@
     <ClCompile Include="SaADP1_2_5.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="queueItem.cpp">
+    <ClCompile Include="circularQueue.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="userInterface.cpp">
@@ -26,7 +26,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="queueItem.h">
+    <ClInclude Include="circularQueue.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="userInterface.h">

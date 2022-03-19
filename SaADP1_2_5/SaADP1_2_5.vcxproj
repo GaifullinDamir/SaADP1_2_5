@@ -139,12 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="queueItem.cpp" />
+    <ClCompile Include="circularQueue.cpp" />
     <ClCompile Include="SaADP1_2_5.cpp" />
     <ClCompile Include="userInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="queueItem.h" />
+    <ClInclude Include="circularQueue.h" />
     <ClInclude Include="userInterface.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
