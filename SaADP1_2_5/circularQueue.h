@@ -8,11 +8,12 @@ enum circelarQueue
 struct CircularQueue
 {
 	int arrayForQueue[ArraySize];
-	int first = 0;
-	int last = 0;
+	int first;
+	int last;
 	int numberOfItems = 0;
 };
 
+void init(int& first, int& last);
 
 bool isEmpty(int numberOfItems);
 

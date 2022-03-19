@@ -1,6 +1,11 @@
 #include <iostream>
 #include "circularQueue.h"
 
+void init(int& first, int& last)
+{
+	first = 0;
+	last = 0;
+}
 bool isEmpty(int numberOfItems)
 {
 	if (numberOfItems == 0) { return true; }
