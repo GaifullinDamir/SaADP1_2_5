@@ -52,7 +52,7 @@ int deleteItem(int* arrayForQueue, int& numberOfItems, int& first)
 
 void printQueue(int* arrayForQueue)
 {
-	for (int i = first ; i < last; i++)
+	for (int i = 0 ; i < ArraySize; i++)
 	{
 		std::cout << arrayForQueue[i] << std::endl;
 	}
