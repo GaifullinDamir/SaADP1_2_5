@@ -1,14 +1,14 @@
 #include <iostream>
 #include "circularQueue.h"
 
-void init(int* arrayForQueue, int& first, int& last)
+void init(CircularQueue& circularQueue)
 {
 	for (int i = 0; i < ArraySize; i++)
 	{
-		arrayForQueue[i] = NULL;
+		circularQueue.arrayForQueue[i] = NULL;
 	}
-	first = 0;
-	last = 0;
+	circularQueue.first = 0;
+	circularQueue.last = 0;
 }
 bool isEmpty(int numberOfItems)
 {
@@ -18,7 +18,7 @@ bool isEmpty(int numberOfItems)
 
 bool isFull(int numberOfItems)
 {
-	if (numberOfItems == ArraySize)	{ return true; }
+	if (numberOfItems == ArraySize) { return true; }
 	else return false;
 }
 

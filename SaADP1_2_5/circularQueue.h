@@ -13,7 +13,7 @@ struct CircularQueue
 	int numberOfItems = 0;
 };
 
-void init(int* arrayForQueue, int& first, int& last);
+void init(CircularQueue& circularQueue);
 
 bool isEmpty(int numberOfItems);
 

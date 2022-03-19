@@ -1,4 +1,5 @@
 #pragma once
+#include "circularQueue.h"
 
 enum userInterface
 {
@@ -18,13 +19,11 @@ void printMainMenu();
 
 int userInput(int numberOfMenu);
 
-void workWithUser(int* arrayForQueue, int& numberOfItems, int& first, int& last);
+void workWithUser(CircularQueue& circularQueue);
 
 void caseAddItem(int* arrayForQueue, int& numberOfItems, int& last);
 
 void caseDeleteItem(int* arrayForQueue, int& numberOfItems, int& first);
-
-void casePrintQueue(int* arrayForQueue);
 
 bool workOrExit();
 

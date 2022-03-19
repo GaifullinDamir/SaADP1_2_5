@@ -56,8 +56,13 @@ int userInput(int numberOfMenu)
 	}
 	return option;
 }
-void workWithUser(int* arrayForQueue, int& numberOfItems, int& first, int& last)
+void workWithUser(CircularQueue& circularQueue)
 {
+	int* arrayForQueue = circularQueue.arrayForQueue;
+	int& numberOfItems = circularQueue.numberOfItems;
+	int& first = circularQueue.first;
+	int& last = circularQueue.last;
+
 	bool work = true;
 	while (work)
 	{
@@ -80,7 +85,8 @@ void workWithUser(int* arrayForQueue, int& numberOfItems, int& first, int& last)
 		}
 		case(PrintQueue):
 		{
-			casePrintQueue(arrayForQueue);
+			if (!isEmpty(numberOfItems)) { printQueue(arrayForQueue); }
+			else std::cout << "   Queue is empty." << std::endl;
 			break;
 		}
 		default:
@@ -117,26 +123,21 @@ void caseDeleteItem(int* arrayForQueue, int& numberOfItems, int& first)
 	if (check == true)
 	{
 		std::cout << std::endl;
-		std::cout << "Deleted item: " << deletedItem << std::endl;
+		std::cout << "   Deleted item: " << deletedItem << std::endl;
 		std::cout << std::endl;
 	}
 	else if (check == false)
 	{
 		std::cout << std::endl;
-		std::cout << "Array is empty. Nothing to delete." << std::endl;;
+		std::cout << "   Queue is empty. Nothing to delete." << std::endl;;
 		std::cout << std::endl;
 	}
-}
-
-void casePrintQueue(int* arrayForQueue)
-{
-	printQueue(arrayForQueue);
 }
 
 bool workOrExit()
 {
 	std::cout << "   Continue (1) / exit (2)" << std::endl;
-	int action = userInput(TwoCases);
+	int action = userInput(WorkOrExit);
 	switch (action)
 	{
 	case(Continue):
