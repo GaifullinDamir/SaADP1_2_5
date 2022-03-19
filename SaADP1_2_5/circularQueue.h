@@ -13,14 +13,14 @@ struct CircularQueue
 	int numberOfItems = 0;
 };
 
-void init(int& first, int& last);
+void init(int* arrayForQueue, int& first, int& last);
 
 bool isEmpty(int numberOfItems);
 
 bool isFull(int numberOfItems);
 
-bool addItem(int* arrayForQueue, int& numberOfItems, int item, int& last);
+void addItem(int* arrayForQueue, int& numberOfItems, int item, int& last);
 
-int deleteItem(int* arrayForQueue, int& numberOfItems, int& first);
+int deleteItem(int* arrayForQueue, int& numberOfItems, int& first, bool& check);
 
 void printQueue(int* arrayForQueue);

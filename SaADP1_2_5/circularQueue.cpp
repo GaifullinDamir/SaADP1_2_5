@@ -1,8 +1,12 @@
 #include <iostream>
 #include "circularQueue.h"
 
-void init(int& first, int& last)
+void init(int* arrayForQueue, int& first, int& last)
 {
+	for (int i = 0; i < ArraySize; i++)
+	{
+		arrayForQueue[i] = NULL;
+	}
 	first = 0;
 	last = 0;
 }
@@ -14,52 +18,39 @@ bool isEmpty(int numberOfItems)
 
 bool isFull(int numberOfItems)
 {
-	if (numberOfItems == ArraySize)	
-	{
-		std::cout << std::endl;
-		std::cout << "Array is full." << std::endl;
-		std::cout << std::endl;
-		return true;
-	}
+	if (numberOfItems == ArraySize)	{ return true; }
 	else return false;
 }
 
-bool addItem(int* arrayForQueue, int& numberOfItems, int item, int& last)
+void addItem(int* arrayForQueue, int& numberOfItems, int item, int& last)
 {
-	if (isFull(numberOfItems)) { return false; }
-	else
-	{
-		arrayForQueue[last] = item;
-		if (last != ArraySize - 1) { last++; }
-		else last = 0;
-		numberOfItems++;
-		return true;
-	}
+	arrayForQueue[last] = item;
+	if (last != ArraySize - 1) { last++; }
+	else last = 0;
+	numberOfItems++;
 }
 
-int deleteItem(int* arrayForQueue, int& numberOfItems, int& first)
+int deleteItem(int* arrayForQueue, int& numberOfItems, int& first, bool& check)
 {
-	if (isEmpty(numberOfItems)) {
-		std::cout << std::endl;; std::cout << "Array is empty. Nothing to delete."; std::cout << std::endl;
-	}
+	if (isEmpty(numberOfItems)) { check = false; }
 	else
 	{
-		int temporary = arrayForQueue[first];
+		int deletedItem = arrayForQueue[first];
+		arrayForQueue[first] = NULL;
 		if (first != ArraySize - 1) { first++; }
 		else first = 0;
 		numberOfItems--;
-		std::cout << std::endl;
-		std::cout << "Deleted item: " << temporary << std::endl;
-		std::cout << std::endl;
-		return temporary;
+		check = true;
+		return deletedItem;
 	}
 }
 
 void printQueue(int* arrayForQueue)
 {
+	std::cout << "   Your queue:" << std::endl;
 	for (int i = 0 ; i < ArraySize; i++)
 	{
-		std::cout << arrayForQueue[i] << std::endl;
+		std::cout << "   " << arrayForQueue[i] << std::endl;
 	}
 	std::cout << std::endl;
 }
