@@ -23,4 +23,4 @@ void addItem(int* arrayForQueue, int& numberOfItems, int item, int& last);
 
 int deleteItem(int* arrayForQueue, int& numberOfItems, int& first, bool& check);
 
-void printQueue(int* arrayForQueue);
+void printQueue(int* arrayForQueue, int first, int last);

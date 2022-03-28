@@ -45,12 +45,18 @@ int deleteItem(int* arrayForQueue, int& numberOfItems, int& first, bool& check)
 	}
 }
 
-void printQueue(int* arrayForQueue)
+void printQueue(int* arrayForQueue, int first, int last)
 {
 	std::cout << "   Your queue:" << std::endl;
-	for (int i = 0 ; i < ArraySize; i++)
+
+	int current = first;
+	do
 	{
-		std::cout << "   " << arrayForQueue[i] << std::endl;
-	}
+		std::cout << "   " << arrayForQueue[current] << std::endl;
+		current++;
+		if (current == ArraySize)
+			current = 0;
+	} while (current != last);
+
 	std::cout << std::endl;
 }

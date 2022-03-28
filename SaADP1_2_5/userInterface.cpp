@@ -85,7 +85,7 @@ void workWithUser(CircularQueue& circularQueue)
 		}
 		case(PrintQueue):
 		{
-			if (!isEmpty(numberOfItems)) { printQueue(arrayForQueue); }
+			if (!isEmpty(numberOfItems)) { printQueue(arrayForQueue, first, last); }
 			else std::cout << "   Queue is empty." << std::endl;
 			break;
 		}
